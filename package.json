@@ -18,6 +18,7 @@
     "test:integration": "tsc && vitest run --config vitest.integration.config.ts",
     "test:all": "yarn test && yarn test:integration",
     "lint": "biome lint src",
+    "lint:fix": "biome lint --write --unsafe src",
     "release": "standard-version"
   },
   "engines": {
