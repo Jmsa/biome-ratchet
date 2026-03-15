@@ -1,5 +1,11 @@
 # biome-ratchet
 
+[![Node Version](https://img.shields.io/node/v/biome-ratchet)](https://nodejs.org)
+[![npm version](https://img.shields.io/npm/v/biome-ratchet)](https://www.npmjs.com/package/biome-ratchet)
+[![License: MIT](https://img.shields.io/npm/l/biome-ratchet)](LICENSE)
+[![Maintainability](https://qlty.sh/gh/Jmsa/projects/biome-ratchet/maintainability.svg)](https://qlty.sh/gh/Jmsa/projects/biome-ratchet)
+[![Test Coverage](https://qlty.sh/gh/Jmsa/projects/biome-ratchet/coverage.svg)](https://qlty.sh/gh/Jmsa/projects/biome-ratchet)
+
 Ratcheting for [Biome](https://biomejs.dev/) lint results. Prevents new violations from being introduced while allowing gradual cleanup of existing ones.
 
 ## How it works
