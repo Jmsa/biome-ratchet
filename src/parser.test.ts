@@ -8,7 +8,7 @@ const makeDiagnostic = (
 ) => ({
   severity,
   category,
-  location: path ? { path } : undefined,
+  location: path ? { path: { file: path } } : undefined,
 });
 
 const wrapDiagnostics = (diagnostics: object[]) =>

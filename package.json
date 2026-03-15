@@ -14,7 +14,10 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
-    "lint": "biome lint src"
+    "test:integration": "tsc && vitest run --config vitest.integration.config.ts",
+    "test:all": "yarn test && yarn test:integration",
+    "lint": "biome lint src",
+    "release": "standard-version"
   },
   "engines": {
     "node": ">=22.0.0"
@@ -32,6 +35,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.13.10",
+    "standard-version": "^9.5.0",
     "typescript": "5.7.3",
     "vitest": "3.0.9"
   }

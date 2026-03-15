@@ -5,7 +5,7 @@ export type CountsMap = Record<string, RuleCounts>;
 interface BiomeDiagnostic {
   severity: string;
   category?: string;
-  location?: { path: string };
+  location?: { path?: { file?: string } | null };
 }
 
 interface BiomeJsonOutput {
@@ -18,9 +18,8 @@ export function parseBiomeOutput(json: string): CountsMap {
 
   for (const diag of output.diagnostics) {
     if (!diag.category?.startsWith("lint/")) continue;
-    if (!diag.location?.path) continue;
-
-    const file = diag.location.path;
+    const file = diag.location?.path?.file;
+    if (!file) continue;
     const rule = diag.category;
     const severity: SeverityKey =
       diag.severity === "error" || diag.severity === "fatal"
