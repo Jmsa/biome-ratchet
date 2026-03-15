@@ -1,6 +1,6 @@
 {
   "name": "biome-ratchet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ratcheting applied to Biome lint results so new issues don't creep in.",
   "main": "dist/cli.js",
   "bin": {
