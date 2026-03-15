@@ -1,0 +1,38 @@
+{
+  "name": "biome-ratchet",
+  "version": "0.1.0",
+  "description": "Ratcheting applied to Biome lint results so new issues don't creep in.",
+  "main": "dist/cli.js",
+  "bin": {
+    "biome-ratchet": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "biome lint src"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "biome",
+    "ratchet",
+    "lint"
+  ],
+  "author": "James Abercrombie <jmsabercrombie88@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "4.1.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.13.10",
+    "typescript": "5.7.3",
+    "vitest": "3.0.9"
+  }
+}
