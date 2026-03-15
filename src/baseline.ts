@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import type { CountsMap } from "./parser";
 
 const BASELINE_FILE = "./biome-ratchet.json";

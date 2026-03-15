@@ -89,7 +89,7 @@ describe("ratchet", () => {
   });
 
   it("removes baseline entry for files that no longer exist on disk", async () => {
-    const { default: fs } = await import("fs");
+    const { default: fs } = await import("node:fs");
     vi.mocked(fs.existsSync).mockReturnValueOnce(false);
 
     const baseline: CountsMap = {

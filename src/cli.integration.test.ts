@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { spawnSync } from "child_process";
-import fs from "fs";
-import os from "os";
-import path from "path";
+import { spawnSync } from "node:child_process";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
 
 const CLI = path.resolve(__dirname, "../dist/cli.js");
 const EXAMPLE_DIR = path.resolve(__dirname, "../example");

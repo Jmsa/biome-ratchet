@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { spawnSync } from "child_process";
+import { spawnSync } from "node:child_process";
 import chalk from "chalk";
 import { parseBiomeOutput } from "./parser";
 import { loadBaseline, writeBaseline, writeTempBaseline, clearTempBaseline } from "./baseline";
@@ -46,9 +46,7 @@ const { hasNewIssues, updatedBaseline, mergedBaseline } = ratchet(baseline, late
 if (hasNewIssues) {
   writeTempBaseline(mergedBaseline);
   console.log(
-    chalk.red("\nNew biome-ratchet issues detected!") +
-      `\nLatest results saved to ${chalk.yellow("biome-ratchet-temp.json")}.` +
-      `\nIf intentional, replace ${chalk.white("biome-ratchet.json")} with it and commit.`
+    `${chalk.red("\nNew biome-ratchet issues detected!")}\nLatest results saved to ${chalk.yellow("biome-ratchet-temp.json")}.\nIf intentional, replace ${chalk.white("biome-ratchet.json")} with it and commit.`
   );
   process.exit(1);
 } else {
