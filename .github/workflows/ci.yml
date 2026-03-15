@@ -4,11 +4,14 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
 
 jobs:
   ci:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -22,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Build
+        run: yarn build
+
       - name: Lint
         run: yarn lint
 
@@ -30,3 +36,10 @@ jobs:
 
       - name: Integration tests
         run: yarn test:integration
+
+      - name: Upload coverage to Qlty
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: qltysh/qlty-action/coverage@v2
+        with:
+          oidc: true
+          files: coverage/lcov.info

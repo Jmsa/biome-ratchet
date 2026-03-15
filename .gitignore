@@ -3,3 +3,4 @@ dist/
 *.tsbuildinfo
 biome-ratchet-temp.json
 coverage/
+coverage/

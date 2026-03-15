@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "tsc",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "test:integration": "tsc && vitest run --config vitest.integration.config.ts",
     "test:all": "yarn test && yarn test:integration",
     "lint": "biome lint src",
@@ -43,6 +43,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.13.10",
+    "@vitest/coverage-v8": "3.0.9",
     "standard-version": "^9.5.0",
     "typescript": "5.7.3",
     "vitest": "3.0.9"
